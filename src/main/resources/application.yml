@@ -1,0 +1,26 @@
+spring:
+# 커넥션 풀 설정
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+
+# JPA 설정
+  jpa:
+    hibernate:
+      ddl-auto: create # 어플리케이션 실행할 때 부트가 알아서 엔티티정보를 보고 테이블을 생성해줌
+    properties:
+      hibernate:
+#        show_sql: true # jpa가 생성한 sql 모두 출력 => syso 형태로 출력
+        format_sql: true
+
+# log
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug #jpa가 생성한 sql 모두 출력 => log 형태로 출력
+        type: trace #로그에서 쭉 올라오는 오른쪽 부분에 ?형태의 파라미터 실제 값을 찍어줌
+    
